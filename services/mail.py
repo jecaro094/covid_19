@@ -1,84 +1,63 @@
-# https://aiosmtplib.readthedocs.io/en/latest/overview.html#quickstart
-import asyncio as aio
-import aiosmtplib
+from email.mime.image import MIMEImage
+import smtplib
+
+from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from services import logger
-import html2text
 
 
-fromaddr = 
-pwd = 
-user = 
-hostname = 
-
-debug = True
-
-class Mail():
-    def __init__(self, loop):
-        self.cn = self.__class__.__name__
-        self.loop = loop
-        self.smtp = {}
-
-    async def connect(self, key):
-        if key in self.smtp:
-            if self.smtp[key].is_connected:
-                print("allready connected")
-        else:
-            self.smtp[key] = aiosmtplib.SMTP(hostname=hostname, port=587, loop=self.loop) 
-            await self.smtp[key].connect()
-            await self.smtp[key].starttls()
-            await self.smtp[key].login(user, pwd)
-            print("connected")
-
-    async def sendmail(self, key, message, participant, hostname, par_type):
-        if key not in self.smtp:
-            await self.connect(key)
-        # NOTE Considered tags in message
-        for key_ in participant.keys():
-            # NOTE ...as long as there is a value assigned to the key_
-            if participant[key_] != None: 
-                tag = f'<{key_}>'
-                if tag in message:
-                    message = message.replace(tag, participant[key_])
-
-        # NOTE Considered link in message
-        if '<link>' in message:
-            link_id = participant['id']
-            link_message = f'{hostname}/participant?{par_type}={link_id}'
-            message = message.replace('<link>', link_message )
-
-        # NOTE Signature included in message sent, as an example
-        h = html2text.HTML2Text()
-        h.ignore_links = False
-        signature = f"""\
-        <html>
-        <head></head>
-        <body>
-            <br>
-            <br>
-            <p>Hi!<br>
-                This is an example of signature for email<br>
-            </p>
-        </body>
-        </html>
-        """
-        signature = h.handle(signature)
-
-        # NOTE Message to send
-        final_message = message + signature
-        logger.log(lvl="INFO", msg=f"Final message: {final_message}", orig=self.cn)
-
-        final_message = MIMEText(final_message)
-        final_message["From"] = fromaddr
-        final_message["To"] = participant['email']
-        final_message["Subject"] = 'subject'
-        logger.log(lvl="INFO", msg=f"Sending message... ({par_type})", orig=self.cn)
-        if debug:
-            print("debug mode,do not send...")
-            return
-        await self.smtp[key].send_message(final_message)
-        logger.log(lvl="INFO", msg=f"Message sent! ({par_type})", orig=self.cn)
-        self.smtp[key].close()
-        self.smtp.pop(key)
+class MailSender(object):
+    def __init__(self, username, password, server='smtp.gmail.com', port=587, use_tls=True):
+        self.username = username
+        self.password = password
+        self.server = server
+        self.port = port
+        self.use_tls = use_tls
 
 
+    def send(self, sender, recipients, subject, message_plain='', message_html='', images=None):
+        '''
+
+        :param sender: str
+        :param recipients: [str]
+        :param subject: str
+        :param message_plain: str
+        :param message_html: str
+        :param images: [{id:str, path:str}]
+        :return: None
+        '''
+
+        msg_related = MIMEMultipart('related')
+
+        msg_related['Subject'] = subject
+        msg_related['From'] = sender
+        msg_related['To'] = ', '.join(recipients)
+        msg_related.preamble = 'This is a multi-part message in MIME format.'
+
+        msg_alternative = MIMEMultipart('alternative')
+        msg_related.attach(msg_alternative)
+
+        plain_part = MIMEText(message_plain, 'plain')
+        html_part = MIMEText(message_html, 'html')
+
+        msg_alternative.attach(plain_part)
+        msg_alternative.attach(html_part)
+
+        if images:
+            for image in images:
+                with open(image['path'], 'rb') as f:
+                    msg_image = MIMEImage(f.read())
+                    msg_image.add_header('Content-ID', '<{0}>'.format(image['id']))
+                    msg_related.attach(msg_image)
+
+        # Sending the mail
+
+        server = smtplib.SMTP('{0}:{1}'.format(self.server, self.port))
+        try:
+            if self.use_tls:
+                server.starttls()
+
+            server.login(self.username, self.password)
+            server.sendmail(sender, recipients, msg_related.as_string())
+
+        finally:
+            server.quit()
