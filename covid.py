@@ -12,7 +12,11 @@ import os
 
 kaggle.api.authenticate()
 kaggle_dataset = ['gold','silver','other']
-dict_sizes = {'size_gold':295919, 'size_silver':527004, 'size_other':333604}
+
+yesterday_previous = date.today() - timedelta(days=2)
+yesterday_updated = date.today() - timedelta(days=1)
+sent_once = False
+cont = 0
 
 # Defining dataframe for specified country
 def get_country_cases(country, country_field, date_field):
@@ -28,13 +32,17 @@ def get_country_cases(country, country_field, date_field):
 
 def get_kaggle_dataset(kaggle_data):
 
-    global dict_sizes
+    global yesterday_updated
+    global yesterday_previous
+    global sent_once
     send_image = False
+
+    os.system("mkdir covid_data ")
 
     if kaggle_data=='gold':
         # Download the COVIDdataset and save files in 'covid_data/' (GOLD)
         os.system("rm -rf covid_data ")
-        os.system("kaggle datasets download sudalairajkumar/novel-corona-virus-2019-dataset ")
+        os.system("kaggle datasets download sudalairajkumar/novel-corona-virus-2019-dataset")
         os.system("unzip novel-corona-virus-2019-dataset.zip -d covid_data ")
         os.system("rm -rf novel-corona-virus-2019-dataset.zip ")
 
@@ -66,16 +74,22 @@ def get_kaggle_dataset(kaggle_data):
         country_field = 'Country'
 
     # 'date_condition==TRUE': new data was registered yesterday
-    yesterday = date.today() - timedelta(days=1)
-    date_condition = str(yesterday) in str(get_country_cases('Spain', country_field, date_field).index.values[-1])
+    yesterday_updated = date.today() - timedelta(days=1)
+    if yesterday_previous!=yesterday_updated:
+        yesterday_previous = yesterday_updated
+        sent_once = False
+        print(f'IMAGE SENT --> {sent_once}')
+    else:
+        print(f'IMAGE SENT --> {sent_once}')
 
-    # 'size_condition==TRUE': 'covid_19_data.csv' size is different from last size checked from kaggle 
-    size_condition = os.path.getsize('covid_data/covid_19_data.csv')!=dict_sizes[f'size_{kaggle_data}']
+    date_condition = str(yesterday_updated) in str(get_country_cases('Spain', country_field, date_field).index.values[-1])
+
 
     # Condition satisfied: run code
-    if date_condition and size_condition:
-        dict_sizes[f'size_{kaggle_data}'] = os.path.getsize('covid_data/covid_19_data.csv')
+    if date_condition and sent_once==False:
         send_image = True
+    else:
+        send_image = False
 
     return send_image, country_field, date_field
 
@@ -123,58 +137,65 @@ def send_gmail_message():
     mail_sender.send(sender, [os.environ['GMAIL_DEST']], 'Imagen del coronavirus', images=images)
 
 
+while(True):
 
-# Consider each covid-19 kaggle dataset
-for kaggle_data in kaggle_dataset:
-    send_image, country_field, date_field = get_kaggle_dataset(kaggle_data)
-    # Keep the data from the dataset with dates from yesterday
-    if(send_image):
-        print('SEND DATA: ', dict_sizes)
-        break
+    # Consider each covid-19 kaggle dataset
+    for kaggle_data in kaggle_dataset:
+        send_image, country_field, date_field = get_kaggle_dataset(kaggle_data)
+        # Keep the data from the dataset with dates from yesterday
+        if(send_image):
+            print('SEND DATA')
+            break
 
-# Main code
-if send_image==True:
+    # Main code
+    if send_image==True:
 
-    # Country lists
-    df_list = []
-    last_days_to_show = 20
-    color_vector = ['blue','red','green']
-    country_names = ['Italy','Spain','Germany']
-    days_window_size = 20 # to define a range = [-20,20] in order to obtain RMS.
-                        # '0' if I dont want to shift graphs
+        # Country lists
+        df_list = []
+        cont += 1
+        last_days_to_show = 22 + cont
+        color_vector = ['blue','red','green']
+        country_names = ['Italy','Spain','Germany']
+        days_window_size = 20 # to define a range = [-20,20] in order to obtain RMS.
+                            # '0' if I dont want to shift graphs
 
-    # Defining new cases 
-    for name in country_names:
-        df_list.append(get_country_cases(name, country_field, date_field))
+        # Defining new cases 
+        for name in country_names:
+            df_list.append(get_country_cases(name, country_field, date_field))
 
 
-    # Define plot parameters
-    ax = plt.gca()
+        # Define plot parameters
+        ax = plt.gca()
 
-    for i, df_country in enumerate(df_list):
-        if i==0: # Italy     
-            df_italy = df_country.copy()
-            ax_0 = df_italy.tail(last_days_to_show).plot(kind='line', lw=4, color=color_vector[0], grid=True, figsize=(15,10), x=date_field, y='Active', ax=ax)   
-        else:
-            df_country_shifted, optimal_day = optimal_shifted_df(df_italy, df_country, days_window_size)
-            globals()['ax_'+str(i)] = df_country_shifted.tail(last_days_to_show).plot(kind='line', lw=4, color=color_vector[i], grid=True, figsize=(15,10), x=date_field, y='Active', ax=ax)   
-            country_names[i] += ': ' + str(optimal_day) + ' days'
+        for i, df_country in enumerate(df_list):
+            if i==0: # Italy     
+                df_italy = df_country.copy()
+                ax_0 = df_italy.tail(last_days_to_show).plot(kind='line', lw=4, color=color_vector[0], grid=True, figsize=(15,10), x=date_field, y='Active', ax=ax)   
+            else:
+                df_country_shifted, optimal_day = optimal_shifted_df(df_italy, df_country, days_window_size)
+                globals()['ax_'+str(i)] = df_country_shifted.tail(last_days_to_show).plot(kind='line', lw=4, color=color_vector[i], grid=True, figsize=(15,10), x=date_field, y='Active', ax=ax)   
+                country_names[i] += ': ' + str(optimal_day) + ' days'
+                
+                
+        ax_0 = df_italy.tail(last_days_to_show).plot(kind='line', lw=4, color=color_vector[0], grid=True, figsize=(15,10), x=date_field, y='Active', ax=ax)   
+        ax_0 = df_italy.tail(last_days_to_show).plot(kind='bar', alpha=0, legend=False, color='blue', grid=True, figsize=(15,10), x=date_field, y='Active', ax=ax)
+
+
+        ax.set_ylabel("Active cases")
+        ax.legend(country_names)
             
-            
-    ax_0 = df_italy.tail(last_days_to_show).plot(kind='line', lw=4, color=color_vector[0], grid=True, figsize=(15,10), x=date_field, y='Active', ax=ax)   
-    ax_0 = df_italy.tail(last_days_to_show).plot(kind='bar', alpha=0, legend=False, color='blue', grid=True, figsize=(15,10), x=date_field, y='Active', ax=ax)
+        # Plot the data
+        #plt.show()
+        plt.savefig('data.png')
 
+        sent_once = True
 
-    ax.set_ylabel("Active cases")
-    ax.legend(country_names)
+        # Send 'data.png' via gmail
+        # Allowed non-secure application access to the account: 'jecarobd@gmail.com'
+        # Otherwise, 'MailSender' gives an authentification error.
+        send_gmail_message()
         
-    # Plot the data
-    #plt.show()
-    plt.savefig('data.png')
 
 
-# Send 'data.png' via gmail
-# Allowed non-secure application access to the account: 'jecarobd@gmail.com'
-# Otherwise, 'MailSender' gives an authentification error.
-#send_gmail_message()
+
 
