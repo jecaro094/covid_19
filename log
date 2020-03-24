@@ -1,0 +1,753 @@
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 21.1MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> False
+covid.py:25: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_country['Active'] = df_country['Confirmed'] - (df_country['Deaths'] + df_country['Recovered'])
+covid.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_country['Datetime'] = pd.to_datetime(df_country[date_field])
+SEND DATA
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 5.42MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 1.94MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 5.18MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 5.92MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.21MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 4.12MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 4.85MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.46MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 4.29MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 4.38MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 4.20MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 4.14MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 1.66MB/s]100%|██████████| 370k/370k [00:00<00:00, 1.63MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 5.06MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 3.97MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 5.31MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.38MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 3.91MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 5.52MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.34MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 4.07MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 5.00MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.45MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 4.13MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 1.99MB/s]100%|██████████| 370k/370k [00:00<00:00, 1.99MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 1.96MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 4.28MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 3.58MB/s]100%|██████████| 370k/370k [00:00<00:00, 3.55MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.80MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 4.33MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 4.82MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 1.91MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 3.71MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 3.91MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 3.28MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 4.96MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 6.09MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 4.60MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 3.68MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 5.32MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.32MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 3.94MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 4.73MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 3.82MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 4.41MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 5.21MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.38MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 3.82MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 6.36MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.30MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 4.36MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 5.32MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.35MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 4.13MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 4.80MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.23MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 4.15MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 5.78MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.48MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 5.64MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 4.46MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.48MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 5.50MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 5.04MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.15MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 5.00MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 3.95MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.76MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 4.61MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 4.97MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 2.39MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 4.26MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 6.41MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+
+Archive:  novel-corona-virus-2019-dataset.zip
+  inflating: covid_data/COVID19_line_list_data.csv  
+  inflating: covid_data/COVID19_open_line_list.csv  
+  inflating: covid_data/covid_19_data.csv  
+  inflating: covid_data/time_series_covid_19_confirmed.csv  
+  inflating: covid_data/time_series_covid_19_deaths.csv  
+  inflating: covid_data/time_series_covid_19_recovered.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/81.2k [00:00<?, ?B/s]100%|██████████| 81.2k/81.2k [00:00<00:00, 4.81MB/s]
+Downloading corona-virus-report.zip to /home/bigdata/github/covid_19
+
+Archive:  corona-virus-report.zip
+  inflating: covid_data/covid_19_clean_complete.csv  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/240k [00:00<?, ?B/s]100%|██████████| 240k/240k [00:00<00:00, 5.32MB/s]
+Downloading covid19-coronavirus.zip to /home/bigdata/github/covid_19
+
+Archive:  covid19-coronavirus.zip
+  inflating: covid_data/2019_nCoV_data.csv  
+  inflating: covid_data/time_series_19-covid-Confirmed.xlsx  
+  inflating: covid_data/time_series_19-covid-Deaths.xlsx  
+  inflating: covid_data/time_series_19-covid-Recovered.xlsx  
+IMAGE SENT --> True
+mkdir: no se puede crear el directorio «covid_data»: El archivo ya existe
+  0%|          | 0.00/370k [00:00<?, ?B/s]100%|██████████| 370k/370k [00:00<00:00, 5.47MB/s]
+Downloading novel-corona-virus-2019-dataset.zip to /home/bigdata/github/covid_19
+

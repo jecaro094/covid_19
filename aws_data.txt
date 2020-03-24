@@ -1,0 +1,14 @@
+AWS_DATA
+
+"VpcId": "vpc-001de840eb813ffe1"
+"SubnetId": "subnet-0387d7b411105bac4"
+"InternetGatewayId": "igw-0a1a96b45eccf1303"
+"RouteTableId": "rtb-0030248c800e53739"
+"AssociationId": "rtbassoc-045f5cc47dbb640ca"
+
+"GroupId": "sg-01b9250b8a29c53b3"
+
+UBUNTU IMAGE: ami-006a0174c6c25ac06
+
+POR TRANSFERING FILES TO EC2 INSTANCE VIA SSH:
+sudo scp -i llaveMaestra_def.pem Anaconda3-2019.10-Linux-x86_64.sh ubuntu@35.178.55.69:
