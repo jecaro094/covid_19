@@ -11,4 +11,5 @@ AWS_DATA
 UBUNTU IMAGE: ami-006a0174c6c25ac06
 
 POR TRANSFERING FILES TO EC2 INSTANCE VIA SSH:
-sudo scp -i llaveMaestra_def.pem Anaconda3-2019.10-Linux-x86_64.sh ubuntu@35.178.55.69:
+sudo scp -i llaveMaestra_def.pem Miniconda3-latest-Linux-x86_64.sh ubuntu@35.178.55.69:
+
