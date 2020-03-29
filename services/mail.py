@@ -14,7 +14,7 @@ class MailSender(object):
         self.use_tls = use_tls
 
 
-    def send(self, sender, recipients, subject, message_plain='', message_html='', images=None):
+    def send(self, sender, recipients, subject, message_plain, message_html, images=None):
         '''
 
         :param sender: str
