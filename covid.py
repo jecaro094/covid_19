@@ -4,11 +4,13 @@ from services.kaggleData import KaggleData
 from services.covidGraphics import CovidGraphics 
 
 from datetime import date, timedelta
+import time
+import schedule
 import os
 
 
 
-def send_gmail_message(text_message):
+def send_gmail_message(text_message, subject):
     username = os.environ['GMAIL_USER']
     password = os.environ['GMAIL_PASS']
     sender = os.environ['GMAIL_USER']
@@ -21,7 +23,7 @@ def send_gmail_message(text_message):
 
     mail_sender = MailSender(username, password)
     mail_sender.send(sender=sender, recipients=[os.environ['GMAIL_DEST']],
-                     subject='Imagen del coronavirus', images=images,
+                     subject=subject, images=images,
                      message_plain=text_message, message_html=text_message)
 
 # MAIN CODE
@@ -50,12 +52,15 @@ def job():
     if kd.send_image:
 
         cg = CovidGraphics(kd)
+
+        cg.subject = f'COVID-19 [{date.today()}]: {cg.cases} cases'
+        cg.text_message = ''
         sent_once = True
 
         # Send 'data.png' via gmail
         # Allowed non-secure application access to the account: 'jecarobd@gmail.com'
         # Otherwise, 'MailSender' gives an authentification error.
-        send_gmail_message(cg.text_message)
+        send_gmail_message(cg.text_message, cg.subject)
 
 # Variables considered to get info from yesterday
 yesterday_previous = date.today() - timedelta(days=2)
@@ -70,10 +75,12 @@ kaggle_dataset = ['gold','silver','other']
 # Required to know if I have sent an image
 sent_once = False
 
+schedule.every().minute.at(":00").do(job)
+
 # Only sends data once! 
-job()
-job()
-job()
+while True:
+    schedule.run_pending()
+    time.sleep(1)
 
         
 
