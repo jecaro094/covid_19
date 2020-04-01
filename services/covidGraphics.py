@@ -12,7 +12,6 @@ class CovidGraphics:
         self.country_names = ['Italy','Spain','Germany']
 
         self.cases = 'Active'
-        self.text_message = 'Message to attach to the e-mail'
 
         self.df_list = []
         self.last_days_to_show = 35
