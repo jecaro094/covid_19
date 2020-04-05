@@ -11,8 +11,7 @@ class CovidGraphics:
         self.color_vector = ['blue','red','green']
         self.country_names = ['Italy','Spain','Germany']
 
-        self.cases = 'Active'
-        self.text_message = 'Message to attach to the e-mail'
+        self.cases = 'Recovered'
 
         self.df_list = []
         self.last_days_to_show = 35
@@ -22,13 +21,17 @@ class CovidGraphics:
 
         self.kd = kd
 
-        self.display_plots()
+        #self.display_plots()
+        self.display_new_daily_cases()
 
     # Defining dataframe for specified country
     def get_country_cases(self, country, country_field, date_field):
         df_total = pd.read_csv('covid_data/covid_19_data.csv')
         df_country = df_total[df_total[country_field]==country]
         df_country['Active'] = df_country['Confirmed'] - (df_country['Deaths'] + df_country['Recovered'])
+
+        # Just to redefine 'Deaths' name, minor change...
+        df_country['Death'] = df_country['Deaths']
         
         # Indexes must be the same when I want to compare different countries
         df_country['Datetime'] = pd.to_datetime(df_country[date_field])
@@ -100,4 +103,42 @@ class CovidGraphics:
         # Plot the data
         #plt.show()
         plt.savefig('data.png')
+
+    def display_new_daily_cases(self):
+        # Country lists
+        self.cont += 1
+        self.last_days_to_show += self.cont
+        daily_list =[]
+        self.cases = 'New'
+
+        # Input country...
+        name = 'Spain'
+        source_cases = 'Death' # 'Death', 'Active', 'Recovered', 'Confirmed' (not very useful last one)
+
+        # Dataframe with active cases (also)
+        self.df_list.append(self.get_country_cases(name, self.kd.country_field, self.kd.date_field))
+
+        # Define new daily cases ('New')
+        for i, active in enumerate(self.df_list[0][source_cases]):
+            if i==0:
+                daily_list.append(active)
+            else:
+                daily_list.append(active-prev_active)
+            prev_active = active
+            
+        #print(daily_list)
+        self.df_list[0]['New'] = daily_list
+
+
+        # Define plot parameters
+        ax = plt.gca()
+                
+        ax_0 = self.df_list[0].tail(self.last_days_to_show).plot(kind='bar', alpha=1, legend=False, color='purple', grid=True, figsize=(15,10), x=self.kd.date_field, y=self.cases, ax=ax)
+
+        ax.set_ylabel(f"{self.cases} {source_cases} Cases")
+        ax.legend([name])
+            
+        # Plot the data
+        plt.show()
+        #plt.savefig('data.png')
 
