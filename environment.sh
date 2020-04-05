@@ -1,5 +1,11 @@
 #!/bin/bash
 
+echo "Getting kaggle.json..."
+cd
+mv ~/Descargas/kaggle.json ~/.kaggle
+sudo chmod 600 ~/.kaggle/kaggle.json
+
+
 echo "Updating..."
 sudo apt-get update --yes
 
@@ -15,4 +21,8 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/
 bash ~/miniconda.sh -b -p ~/miniconda 
 rm ~/miniconda.sh
 
-# Get and save configuration file (kaggle)
+echo "Installing kaggle for pip..."
+pip install kaggle
+
+echo "Installing schedule for pip..."
+pip install schedule

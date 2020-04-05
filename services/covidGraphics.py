@@ -11,7 +11,7 @@ class CovidGraphics:
         self.color_vector = ['blue','red','green']
         self.country_names = ['Italy','Spain','Germany']
 
-        self.cases = 'Recovered'
+        self.cases = 'Active'
 
         self.df_list = []
         self.last_days_to_show = 35
