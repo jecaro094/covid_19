@@ -3,13 +3,19 @@ import math
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib import dates
-from matplotlib.pyplot import figure
+#from matplotlib import dates
+#from matplotlib.pyplot import figure
+
+from bokeh.io import output_file, show
+from bokeh.layouts import column, gridplot
+from bokeh.plotting import figure
+from bokeh.palettes import plasma
+from bokeh.models import Range1d, ColumnDataSource
 
 class CovidGraphics:
     def __init__(self, kd):
-        self.color_vector = ['blue','red','green']
-        self.country_names = ['Italy','Spain','Germany']
+        self.color_vector = ['green']
+        self.country_names = ['Germany']
 
         self.cases = 'Active'
 
@@ -22,7 +28,7 @@ class CovidGraphics:
         self.kd = kd
 
         #self.display_plots()
-        self.display_new_daily_cases()
+        self.display_new_daily_cases_bokeh('Spain', 'Recovered')
 
     # Defining dataframe for specified country
     def get_country_cases(self, country, country_field, date_field):
@@ -101,8 +107,8 @@ class CovidGraphics:
         ax.legend(self.country_names)
             
         # Plot the data
-        #plt.show()
-        plt.savefig('data.png')
+        plt.show()
+        #plt.savefig('data.png')
 
     def display_new_daily_cases(self):
         # Country lists
@@ -112,8 +118,8 @@ class CovidGraphics:
         self.cases = 'New'
 
         # Input country...
-        name = 'Spain'
-        source_cases = 'Death' # 'Death', 'Active', 'Recovered', 'Confirmed' (not very useful last one)
+        name = 'Germany'
+        source_cases = 'Active' # 'Death', 'Active', 'Recovered', 'Confirmed' (not very useful last one)
 
         # Dataframe with active cases (also)
         self.df_list.append(self.get_country_cases(name, self.kd.country_field, self.kd.date_field))
@@ -142,3 +148,35 @@ class CovidGraphics:
         plt.show()
         #plt.savefig('data.png')
 
+    def display_new_daily_cases_bokeh(self, name, source_cases):
+        # Country lists
+        self.cont += 1
+        self.last_days_to_show += self.cont
+        daily_list =[]
+        self.cases = 'New'
+
+        # Input country...
+        #name = 'Germany'
+        #source_cases = 'Active' # 'Death', 'Active', 'Recovered', 'Confirmed' (not very useful last one)
+
+        # Dataframe with active cases (also)
+        self.df_list.append(self.get_country_cases(name, self.kd.country_field, self.kd.date_field))
+
+        # Define new daily cases ('New')
+        for i, active in enumerate(self.df_list[0][source_cases]):
+            if i==0:
+                daily_list.append(active)
+            else:
+                daily_list.append(active-prev_active)
+            prev_active = active
+            
+        #print(daily_list)
+        self.df_list[0]['New'] = daily_list
+
+        # Implementing bokeh plots
+        source = ColumnDataSource(self.df_list[0].tail(self.last_days_to_show))
+        dates = source.data[self.kd.date_field].tolist()
+        p = figure(x_range=dates, plot_height=650, plot_width=1200, title="-----", toolbar_location=None, tools="", tooltips=[(f"New {source_cases} cases", "@New")])
+        p.vbar(x=self.kd.date_field, width=0.6 , top='New' , fill_color='purple', legend_label=name, source=source)
+        p.xaxis.major_label_orientation = math.pi/2
+        show(p)
