@@ -1,74 +1,38 @@
+import pandas as pd
 
-from services.mail import MailSender
-from services.kaggleData import KaggleData
-from services.covidGraphics import CovidGraphics 
+# MAIN
+data = pd.read_csv("https://covid19.isciii.es/resources/serie_historica_acumulados.csv", encoding='cp1252')
+cond = (data['CCAA']=='AN') & (data['CASOS'].notnull()) & (data['Hospitalizados'].notnull()) & (data['UCI'].notnull()) & (data['Recuperados'].notnull()) & (data['Fallecidos'].notnull())
+andalucia = data[cond]
+andalucia['Activos'] = andalucia['CASOS'] - andalucia['Fallecidos'] - andalucia['Recuperados']
 
-from datetime import date, timedelta
-import os
+# Cambiar índice por la fecha
+andalucia = andalucia.set_index('FECHA')
 
-
-
-def send_gmail_message(text_message, subject):
-    username = os.environ['GMAIL_USER']
-    password = os.environ['GMAIL_PASS']
-    sender = os.environ['GMAIL_USER']
-
-    images = list()
-    images.append({
-        'id': 'data',
-        'path': 'data.png'
-    })
-
-    mail_sender = MailSender(username, password)
-    mail_sender.send(sender=sender, recipients=[os.environ['GMAIL_DEST']],
-                     subject=subject, images=images,
-                     message_plain=text_message, message_html=text_message)
-
-# MAIN CODE
-def job():
-
-    global sent_once
-    global yesterday_previous
-    global yesterday_updated
-    global cont
-    global kaggle_dataset
-
-    # Consider each covid-19 kaggle dataset
-    for kaggle_data in kaggle_dataset:
-        # Define object with 'KaggleData' class
-        kd = KaggleData(kaggle_data, yesterday_previous, yesterday_updated, sent_once)
-        yesterday_previous = kd.yesterday_previous
-        yesterday_updated = kd.yesterday_updated
-        # Keep the data from the dataset with dates from yesterday
-        if kd.send_image:
-            print("SENDING DATA...")
-            break
-        else:
-            print("NOT SENDING DATA")
-
-    # Main code
-    if kd.send_image:
-
-        cg = CovidGraphics(kd)
-        cg.text_message = ''
-        cg.subject = f'{date.today()}: {cg.cases} cases'
-        sent_once = True
+# Información del dataframe para ANDALUCÍA
+print(andalucia)
 
 
-# Variables considered to get info from yesterday
-yesterday_previous = date.today() - timedelta(days=2)
-yesterday_updated = date.today() - timedelta(days=1)
+import matplotlib.pyplot as plt
+ax = plt.gca()
+ax1 = andalucia.plot(kind='line', lw=4, grid=True, figsize=(15,10), ax=ax)
+ax2 = andalucia.plot(kind='bar', alpha=0, lw=4, grid=True, figsize=(15,10), ax=ax, legend=None)
+plt.show()
+plt.clf()
 
-# Considered in plots
-cont = 0
 
-# Datasets considered
-kaggle_dataset = ['gold','silver','other']
+# Define new daily cases ('New')
+daily_list = []
+for i, active in enumerate(andalucia['CASOS']):
+    if i==0:
+        daily_list.append(active)
+    else:
+        daily_list.append(active-prev_active)
+    prev_active = active 
+andalucia['NUEVOS'] = daily_list
 
-# Required to know if I have sent an image
-sent_once = False
 
-# Only sends data once! 
-job()
 
-        
+ax = plt.gca()
+ax3 = andalucia['NUEVOS'].plot(kind='bar', alpha=1, color='purple', grid=True, figsize=(15,10), ax=ax, legend=None)
+plt.show()
